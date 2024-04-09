@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zbws)ha^py%rqr3^jxim2tvthr^mx!1cle7_+etl@ryhz0yw=z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -125,7 +125,22 @@ STATICFILES_DIRS=[
 ]
 MEDIA_URL = 'media/'
 MEDIA_ROOT=BASE_DIR / 'media'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS={
+  messages.ERROR:'danger',
+  messages.SUCCESS:'success'
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='napojimenez68@gmail.com'
+EMAIL_HOST_PASSWORD='ndga xlom otwl fvan'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

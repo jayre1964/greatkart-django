@@ -4,7 +4,7 @@
 $(document).ready(function() {
 	// jQuery code
 
-
+  alert('READY!')
     /* ///////////////////////////////////////
 
     THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE, 
@@ -19,6 +19,7 @@ $(document).ready(function() {
     });
 
 
+   
     $('.js-check :radio').change(function () {
         var check_attr_name = $(this).attr('name');
         if ($(this).is(':checked')) {
@@ -54,7 +55,11 @@ $(document).ready(function() {
 
 
 
+
     
 }); 
 // jquery end
 
+setTimeout(function(){
+  $("#message").fadeOut('slow')
+},2000)
